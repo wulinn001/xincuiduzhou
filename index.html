@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星垂渡舟</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* 最底层背景 */
+        .game-wrap{
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+            background: url("进入页面/进入页面背景.png")no-repeat center center;
+            background-size: cover;
+        }
+        /* 主标题样式+浮动呼吸动效 */
+        .main-title{
+            position: absolute;
+            top: 32%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 55vw;
+            max-width: 772px;
+            animation: breathe 3s ease-in-out infinite alternate;
+        }
+        @keyframes breathe{
+            0%{transform: translateX(-50%) scale(1); opacity:0.92;}
+            100%{transform: translateX(-50%) scale(1.03); opacity:1;}
+        }
+        /* B城选择栏 */
+        .city-select{
+            position: absolute;
+            top: 58%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 28vw;
+            max-width: 395px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .city-select:hover{
+            filter: brightness(1.15);
+        }
+        /* 进入游戏按钮+跳转交互 */
+        .enter-btn{
+            position: absolute;
+            top: 68%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18vw;
+            max-width: 260px;
+            cursor: pointer;
+            transition: all 0.25s;
+        }
+        .enter-btn:hover{
+            transform: translateX(-50%) scale(1.08);
+            filter: drop-shadow(0 0 12px #fff);
+        }
+        .enter-btn:active{
+            transform: translateX(-50%) scale(0.96);
+        }
+        /* 右侧图标垂直列表 */
+        .icon-group{
+            position: absolute;
+            right: 2.5vw;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        .icon-item{
+            width: 65px;
+            height: 63px;
+            transition: transform 0.2s, filter 0.2s;
+            cursor: pointer;
+        }
+        .icon-item:hover{
+            transform: scale(1.12);
+            filter: drop-shadow(0 0 8px #fff);
+        }
+    </style>
+</head>
+<body>
+    <div class="game-wrap">
+        <!-- 主标题 -->
+        <img src="进入页面/进入页面标题.png" alt="星垂渡舟" class="main-title">
+        <!-- 地区选择 -->
+        <img src="进入页面/B城.png" alt="选择地区B城" class="city-select">
+        <!-- 进入游戏按钮 点击跳转next.html -->
+        <a href="next.html">
+            <img src="进入页面/进入游戏.png" alt="进入游戏" class="enter-btn">
+        </a>
+        <!-- 右侧功能图标 -->
+        <div class="icon-group">
+            <img src="进入页面/客服咨询.png" class="icon-item">
+            <img src="进入页面/系统设置.png" class="icon-item">
+            <img src="进入页面/显示器.png" class="icon-item">
+            <img src="进入页面/云服务器.png" class="icon-item">
+        </div>
+    </div>
+</body>
+</html>
